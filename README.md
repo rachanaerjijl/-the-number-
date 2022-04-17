@@ -1,0 +1,2 @@
+# -the-number-
+ Func _GetWords($sString, $dFlag = 3)     If Not IsString($sString) Then Return SetError(1, 0, 0) ; Not a string     If Not IsInt($dFlag) Or $dFlag &lt; 0 Then Return SetError(2, 0, 0) ; Invalid flag      If BitAND($dFlag, 32) = 32 Then ; Override all other flags         $aWordArray = StringRegExp($sString, "S+", 3)         If Not @error Then             SetExtended(UBound($aWordArray)) ; Set the extended flag to the number of words found             Return $aWordArra
